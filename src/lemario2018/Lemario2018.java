@@ -17,12 +17,12 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author xp
+ * @author Diego Álvarez
  */
 public class Lemario2018 {
     ArrayList<String> lemario = new ArrayList();
     public void cargaFicheroLemario(){
-        File fichero = new File("src/ejerciciolemario/lemario-20101017.txt");
+        File fichero = new File("src/lemario2018/lemario-20101017.txt");
         //Array[] arrayFichero = new Array[1];
         try 
         {
@@ -55,12 +55,11 @@ public class Lemario2018 {
         return false;
     }
     
-    public boolean escaleraDePalabras(ArrayList<String> escalera)//Codigo cogido de un ejercicio muy antiguo que hice hace la hostia, 
-                                                                 //con cambios minimos para que realize correctamente el lemario 
+    public boolean escaleraDePalabras(ArrayList<String> escalera)//método de escalera de palabras 
      {
         boolean aux1 = true;
 	boolean aux2 = true;
-        int sida;
+        int aux3;
 	for (int i = 0; i < escalera.size() - 1 && aux2; i++) 
         {	
             aux1 = buscar(escalera.get(i));
@@ -68,16 +67,16 @@ public class Lemario2018 {
             {
                 return false;
             }
-            sida = 0;//Se establece aqui a 0 para que cada vez que entre al for se ponga a 0 otra vez
+            aux3 = 0;//Se establece aqui a 0 para que cada vez que entre al for se ponga a 0 otra vez
 	    if (escalera.get(i + 1).length() == escalera.get(i).length()) 
             {		
 		for (int j = 0; j < escalera.get(i).length(); j++) 
                 {
                     if(escalera.get(i).charAt(j) != escalera.get(i + 1).charAt(j))
                     {
-                        sida++;
+                        aux3++;
                     }
-                    if(sida > 1)//El fallo que tenia era (aparte de ser subnormal)era que tenia que si sida era mayor que 0 de
+                    if(aux3 > 1)//El fallo que tenia era (aparte de ser subnormal)era que tenia que si sida era mayor que 0 de
                                 //false, sin embargo como debe ser 1 ya que tiene que ser una letra diferente
                     {
                         aux2 = false;
