@@ -76,8 +76,8 @@ public class Lemario2018 {
                     {
                         aux3++;
                     }
-                    if(aux3 > 1)//El fallo que tenia era (aparte de ser subnormal)era que tenia que si sida era mayor que 0 de
-                                //false, sin embargo como debe ser 1 ya que tiene que ser una letra diferente
+                    if(aux3 > 1)
+                                
                     {
                         aux2 = false;
                     }
@@ -90,7 +90,7 @@ public class Lemario2018 {
 	}
 	return aux2;
     }
-    public static String limpiarAcentos(String cadena)//Viva StackOverFlow
+    public static String limpiarAcentos(String cadena)//Realizo un StackOverFlow
     {
         String limpio = null;
         if (cadena != null) 
